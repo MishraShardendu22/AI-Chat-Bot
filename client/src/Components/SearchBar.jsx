@@ -1,18 +1,42 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
-import { setMessage, addToHistory } from '../constants/MessageAndHistoryContext';
+import { setMessage, addToHistory, clearHistory } from '../constants/MessageAndHistoryContext';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 
 const MessageInput = () => {
   const message = useSelector((state) => state.chat.message);
+  const history = useSelector((state) => state.chat.history);
   const dispatch = useDispatch();
+
+  // Fetch the saved history from the backend on component mount
+  useEffect(() => {
+    const fetchHistory = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/history');
+        if (response.data.success) {
+          // Clear existing history first and then add the fetched history
+          dispatch(clearHistory());
+          
+          response.data.history.forEach((item) => {
+            dispatch(addToHistory(item));
+          });
+        }
+      } catch (e) {
+        console.error(e);
+        toast.error('Failed to load history');
+      }
+    };
+
+    fetchHistory();
+  }, [dispatch]); // This effect runs once when the component mounts
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(history);
 
     if (message.trim() === '') {
       toast.error('Please enter a message');
@@ -25,6 +49,7 @@ const MessageInput = () => {
     try {
       const response = await axios.post('http://localhost:3000/generate', {
         prompt: message,
+        array: history,
       });
       if (response.data.success) {
         dispatch(addToHistory(response.data.data));

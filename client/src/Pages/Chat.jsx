@@ -7,13 +7,20 @@ import CardFirstTime from "../Components/CardFirstTime";
 import priorMessages from "../constants/PriorMsg";
 import MessageInput from "../Components/SearchBar";
 import { clearHistory, setMessage } from "../constants/MessageAndHistoryContext";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Chat = () => {
   const history = useSelector((state) => state.chat.history);
   const dispatch = useDispatch();
 
   const clearChat = () => {
-    dispatch(clearHistory());
+    const clearDB = async () => {      
+      await axios.delete('http://localhost:3000/clear'); // Await this response
+      dispatch(clearHistory()); // Dispatch only after the DB clear succeeds
+      toast.success('History cleared successfully');
+    };
+    clearDB(); // Call the async function
   };
 
   return (
