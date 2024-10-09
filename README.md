@@ -11,11 +11,13 @@ A chatbot built using the Gemini API, similar to ChatGPT, deployed on Render. Th
 ![Vite](https://img.shields.io/badge/Vite-4A4A4A?style=for-the-badge&logo=vite&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-00D8FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Gemini API](https://img.shields.io/badge/Gemini%20API-FF5733?style=for-the-badge&logo=api&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)
 
 - **Express**: A fast web framework for Node.js, perfect for building APIs.
 - **Axios**: A promise-based HTTP client for the browser and Node.js, used for making requests to the Gemini API.
 - **Vite**: A modern frontend build tool that provides a fast development environment.
 - **Framer Motion**: A library for animations in React applications, enhancing the user experience with smooth transitions.
+- **Redux Toolkit**: A standardized way to write Redux logic that simplifies the process of managing state.
 
 ## Getting Started
 
