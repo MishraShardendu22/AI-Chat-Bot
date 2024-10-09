@@ -16,11 +16,11 @@ const MessageInput = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/history');
+        const response = await axios.get('https://ai-back-rujt.onrender.com/history');
         if (response.data.success) {
           // Clear existing history first and then add the fetched history
           dispatch(clearHistory());
-          
+
           response.data.history.forEach((item) => {
             dispatch(addToHistory(item));
           });
@@ -47,7 +47,7 @@ const MessageInput = () => {
     dispatch(setMessage(''));
 
     try {
-      const response = await axios.post('http://localhost:3000/generate', {
+      const response = await axios.post('https://ai-back-rujt.onrender.com/generate', {
         prompt: message,
         array: history,
       });

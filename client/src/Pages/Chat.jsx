@@ -16,7 +16,7 @@ const Chat = () => {
 
   const clearChat = () => {
     const clearDB = async () => {      
-      await axios.delete('http://localhost:3000/clear'); // Await this response
+      await axios.delete('https://ai-back-rujt.onrender.com/clear'); // Await this response
       dispatch(clearHistory()); // Dispatch only after the DB clear succeeds
       toast.success('History cleared successfully');
     };
