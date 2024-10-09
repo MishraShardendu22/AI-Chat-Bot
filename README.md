@@ -21,12 +21,12 @@ A chatbot built using the Gemini API, similar to ChatGPT, deployed on Render. Th
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/ShardenduMishra22/AI-Chat-Bot.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd <your-project-directory>
+   cd Ai-chat-bot
    ```
 
 3. Install the dependencies:
