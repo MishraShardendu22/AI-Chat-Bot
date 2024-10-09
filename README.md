@@ -10,6 +10,7 @@ A chatbot built using the Gemini API, similar to ChatGPT, deployed on Render. Th
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-4A4A4A?style=for-the-badge&logo=vite&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer%20Motion-00D8FF?style=for-the-badge&logo=framer&logoColor=white)
+![Gemini API](https://img.shields.io/badge/Gemini%20API-FF5733?style=for-the-badge&logo=api&logoColor=white)
 
 - **Express**: A fast web framework for Node.js, perfect for building APIs.
 - **Axios**: A promise-based HTTP client for the browser and Node.js, used for making requests to the Gemini API.
