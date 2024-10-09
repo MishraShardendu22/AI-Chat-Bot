@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: '*', // Make sure to allow all origins or specify the correct one
+  origin: '*',
   methods: ['GET', 'POST', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
